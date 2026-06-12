@@ -1,0 +1,10 @@
+pycache/
+*.pyc
+.ipynb_checkpoints/
+
+.venv/
+venv/
+.env
+
+database/olist.db
+data/
