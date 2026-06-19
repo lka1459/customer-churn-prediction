@@ -2,3 +2,4 @@ pandas
 sckit-learn
 matplotlib
 seaborn
+lightgbm

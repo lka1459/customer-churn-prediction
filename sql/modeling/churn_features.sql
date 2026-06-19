@@ -9,6 +9,7 @@ AVG(oi.price) AS average_spent,
         julianday(o.order_delivered_customer_date)
         - julianday(o.order_estimated_delivery_date)
     ) AS avg_delivery_lateness,
+MAX(o.order_purchase_timestamp) AS last_order_date,
 AVG(ore.review_score) AS avg_review_score,
 COUNT(DISTINCT p.product_category_name) AS num_categories
 FROM customers AS c
