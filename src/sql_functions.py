@@ -36,3 +36,6 @@ def read_SQL_Query(filePath) -> pd.DataFrame:
     conn.close()
 
     return df
+
+if __name__ == "__main__":
+    create_database()
