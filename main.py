@@ -1,9 +1,9 @@
 import pandas as pd
 from pathlib import Path
 
-
 from src.database_setup import create_database, read_SQL_Query
 from src.data_preprocessing import build_preprocessor, data_preprocessing, load_and_split
+from src.mode_pipeline import model_selection, fit_model
 
 def initial_setup() -> pd.DataFrame:
     print("Customer Churn Prediction")
@@ -23,6 +23,10 @@ def main():
 
     X_train, X_test, y_train, y_test = load_and_split(df)
     preprocessor = build_preprocessor(X_train)
+    model, param_grid = model_selection()
+
+    trained_model = fit_model(model, param_grid,preprocessor, X_train, y_train)
+
 
 if __name__ == "__main__":
     main()
