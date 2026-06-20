@@ -3,7 +3,7 @@ from pathlib import Path
 
 from src.database_setup import create_database, read_SQL_Query
 from src.data_preprocessing import build_preprocessor, data_preprocessing, load_and_split
-from src.mode_pipeline import model_selection, fit_model
+from src.model_pipeline import model_selection, fit_model
 
 def initial_setup() -> pd.DataFrame:
     print("Customer Churn Prediction")
