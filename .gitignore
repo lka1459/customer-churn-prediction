@@ -7,3 +7,5 @@ venv/
 .env
 
 database/olist.db
+results/plots
+results/reports

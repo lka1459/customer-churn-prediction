@@ -49,7 +49,7 @@ def fit_model(chosen_model,
               X_train: pd.DataFrame, 
               y_train: pd.Series) -> Pipeline:
     
-    print("Model Training")
+    print("\nModel Training")
     print("=" * 30)
     
     pipeline: Pipeline= Pipeline([
