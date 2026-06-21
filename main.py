@@ -21,7 +21,8 @@ def initial_setup() -> pd.DataFrame:
     return df
 
 def main():
-    warnings.filterwarnings('ignore')
+    warnings.filterwarnings('ignore', category=UserWarning)
+        
     df = initial_setup()
 
     X_train, X_test, y_train, y_test = load_and_split(df)
