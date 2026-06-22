@@ -1,6 +1,6 @@
 pandas
 numpy
-sckit-learn
+scikit-learn
 matplotlib
 seaborn
 lightgbm
