@@ -57,7 +57,7 @@ Customer churn labels are generated based on purchase inactivity.
 
 The project currently experiments with:
 
-* Random Forest Classifier
+* LGBM Classifier
 * LightGBM Classifier
 
 Models are implemented using scikit-learn pipelines and ColumnTransformers.

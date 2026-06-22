@@ -41,8 +41,6 @@ def model_selection() -> List[Dict]:
         else:
             print("\nInvalid choice, please try again.")
 
-
-
 def fit_model(chosen_model,
               param,
               preprocessor: ColumnTransformer, 
