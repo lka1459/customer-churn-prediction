@@ -6,7 +6,7 @@ from src.database_setup import create_database, read_SQL_Query
 from src.data_preprocessing import build_preprocessor, data_preprocessing, load_and_split
 from src.model_pipeline import model_selection, fit_model
 from src.model_evaluation import evaluate_model
-from src.model_predictor import churn_predictor
+from src.predictive_inference import churn_predictor
 
 def initial_setup() -> pd.DataFrame:
     print("Customer Churn Prediction")

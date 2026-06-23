@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 def create_database() -> None:
+    Path("database").mkdir(parents=True, exist_ok=True)
     conn: sqlite3.Connection = sqlite3.connect("database/olist.db")
     path: str = Path(f"{Path.cwd()}/data/")
 
