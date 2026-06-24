@@ -9,3 +9,4 @@ venv/
 database/olist.db
 results/plots
 results/reports
+testing.py

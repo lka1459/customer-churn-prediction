@@ -57,7 +57,7 @@ Customer churn labels are generated based on purchase inactivity.
 
 The project currently experiments with:
 
-* LGBM Classifier
+* XGB Booster 
 * LightGBM Classifier
 
 Models are implemented using scikit-learn pipelines and ColumnTransformers.
@@ -71,6 +71,7 @@ Models are implemented using scikit-learn pipelines and ColumnTransformers.
 * NumPy
 * scikit-learn
 * LightGBM
+* XGBoost
 * matplotlib
 * seaborn
 * Jupyter Notebook

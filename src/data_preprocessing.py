@@ -1,11 +1,11 @@
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 
-def handleInStorePurchases(value) -> int:
+def handleInStorePurchases(value: Optional[float]) -> int:
     """
     Helper function used to deal with the null values.
     """
@@ -14,7 +14,7 @@ def handleInStorePurchases(value) -> int:
     else:
         return value
 
-def data_preprocessing(olist_df) -> pd.DataFrame:
+def data_preprocessing(olist_df: pd.DataFrame) -> pd.DataFrame:
     """
     Applies all data cleaning/prepocessing necessary on the dataset.
     """
@@ -28,6 +28,9 @@ def data_preprocessing(olist_df) -> pd.DataFrame:
     return olist_df
 
 def load_and_split(df) -> Tuple[pd.DataFrame, pd.Series, pd.DataFrame, pd.Series]:
+    """
+    Splits the dataset into training and testing sets.
+    """
     X: pd.DataFrame = df.drop(columns=["churn", "customer_unique_id"])
     y: pd.Series = df["churn"]
 
@@ -35,7 +38,10 @@ def load_and_split(df) -> Tuple[pd.DataFrame, pd.Series, pd.DataFrame, pd.Series
 
     return X_train, X_test, y_train, y_test
 
-def build_preprocessor(X_train) -> ColumnTransformer:
+def build_preprocessor(X_train: pd.DataFrame) -> ColumnTransformer:
+    """
+    Builds a ColumnTransformer for preprocessing the dataset, applying StandardScaler to numerical columns and OneHotEncoder to categorical columns.
+    """
     categorical_cols: List[str | object] = X_train.select_dtypes(include=["object", "string"]).columns.tolist()
     numerical_cols: List[int | float] = X_train.select_dtypes(include=["int64", "float64"]).columns.tolist()
 
